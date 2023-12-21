@@ -1,9 +1,67 @@
 # Recipes-1
 
 ## Introduction
-This document outlines the schema of the PostgreSQL database used for the `recipes-1` project. It includes details of the tables, their columns, data types, and a brief description of each.
-
+This project presents a scalable PostgreSQL database schema designed for a recipe and grocery list application. It's a backend solution for managing culinary recipes and simplifying grocery shopping experiences. The schema is structured to handle complex relationships inherent in recipe management and grocery list creation, making it a good starting point for developers looking to build a comprehensive recipe and grocery list management system where recipe data can be handled in a dynamic way.
 ---
+## Prerequisites
+
+- Node.js and npm installed (link to Node.js download page)
+- PostgreSQL installed and running (link to PostgreSQL download page)
+- A PostgreSQL database created for the project (e.g., `recipes-1`)
+
+## Setup
+
+### Database Setup
+
+1. **Create Database**: 
+   - Make sure PostgreSQL is running.
+   - Create a new database.
+
+2. **Create Tables**:
+   - Open the SQL script for creating tables (e.g., `create-schema.sql`).
+   - Run the script in your PostgreSQL database to create the tables. This can be done via a PostgreSQL GUI tool or using the `psql` command-line tool.
+
+### Application Setup
+
+
+1. **Clone the Repository** 
+   
+   First, copy the repository URL: `https://github.com/tamaradement/recipes-1`.
+
+   Then, clone the repository using the command:
+
+   ```bash
+   git clone https://github.com/tamaradement/recipes-1
+   ```
+   
+2. **Navigate to the Project Directory**:
+   ```bash
+   cd path/to/project
+   ```
+
+3. **Install Dependencies**:
+   - Make sure you are in the project directory which contains `package.json`.
+   - Run:
+     ```bash
+     npm install
+     ```
+
+4. **Environment Variables**:
+   - Create a `.env` file in the root of your project.
+   - Add the required environment variables (as detailed in the `database.js` section of the README).
+
+## Running the Project
+
+### Running the SQL Queries
+
+- Use your preferred method to run SQL queries in the PostgreSQL database. This could be through a GUI tool or the `psql` command-line interface.
+
+### Running the Node.js Script
+
+- To print shopping list items for a specific list, run the following command in the terminal, replacing `[listId]` with the actual ID of the list:
+  ```bash
+  node printShoppingList.js [listId]
+  ```
 
 ## Tables
 
@@ -99,7 +157,6 @@ Associates shopping lists with specific recipe ingredients, facilitating the cre
 
 ### Shopping List and RecipeIngredients (Many-to-Many)
 - A `ShoppingList` can contain multiple `RecipeIngredients`.
-- The `ShoppingListItems` table serves as a junction table, linking `ShoppingList` with `RecipeIngredients`, thereby enabling the creation of shopping lists based on the ingredients required for selected recipes.
+- The `ShoppingListItems` table serves as a junction table, linking `ShoppingList` with `RecipeIngredients`, which enables the creation of shopping lists based on the ingredients required for selected recipes.
 
----
 
