@@ -1,10 +1,15 @@
 # Recipes-1
 
 ## Introduction
-This project presents a scalable PostgreSQL database schema designed for a recipe and grocery list application. It's a backend solution for managing culinary recipes and simplifying grocery shopping experiences. The schema is structured to handle complex relationships inherent in recipe management and grocery list creation, making it a good starting point for developers looking to build a comprehensive recipe and grocery list management system where recipe data can be handled in a dynamic way.
+- This project presents a scalable PostgreSQL database schema designed for a recipe and grocery list application. It's a backend solution for managing culinary recipes and simplifying grocery shopping experiences. The schema is structured to handle complex relationships inherent in recipe management and grocery list creation, making it a good starting point for developers looking to build a comprehensive recipe and grocery list management system where recipe data can be handled in a dynamic way.
+---
+## Key Features
+- *Postgres Schema:* The heart of the project is a PostgreSQL schema design that includes tables for Recipes and Ingredients, along with a join table to establish their many-to-many relationship. Additionally, it features a ShoppingList table and ShoppingListItems table, which further extend the many-to-many relationship between shopping lists and recipe ingredients.
+
+- *List Aggregation Script:* A key highlight of this project is a Node.js script designed to dynamically print shopping lists. This script consolidates similar items by summing their quantities, addressing an issue when combining items from multiple recipes. For instance, if a shopping list includes items from two different recipes, this might result in duplicate entries for the same ingredient, such as sugar listed as 150 grams and 50 grams. The script groups these into a single entry (sugar at 200 grams). This functionality highlights a key schema design choice; to store ingredient quantities within the join table between recipes and ingredients. 
+
 ---
 ## Prerequisites
-
 - Node.js and npm installed (link to Node.js download page)
 - PostgreSQL installed and running (link to PostgreSQL download page)
 - A PostgreSQL database created for the project (e.g., `recipes-1`)
