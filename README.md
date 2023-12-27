@@ -6,7 +6,11 @@
 ## Key Features
 - *Postgres Schema:* The heart of the project is a PostgreSQL schema design that includes tables for Recipes and Ingredients, along with a join table to establish their many-to-many relationship. Additionally, it features a ShoppingList table and ShoppingListItems table, which further extend the many-to-many relationship between shopping lists and recipe ingredients.
 
-- *List Aggregation Script:* A key highlight of this project is a Node.js script designed to dynamically print shopping lists. This script consolidates similar items by summing their quantities, addressing an issue when combining items from multiple recipes. For instance, if a shopping list includes items from two different recipes, this might result in duplicate entries for the same ingredient, such as sugar listed as 150 grams and 50 grams. The script groups these into a single entry (sugar at 200 grams). This functionality highlights a key schema design choice; to store ingredient quantities within the join table between recipes and ingredients. 
+- *Scripts that condense list data:* These scripts demonstrate a potential improvement to the shopping list feature in America's Test Kitchen mobile app, specifically in handling recipe ingredients. These scripts consolidates duplicate items by summing their quantities, addressing an issue when combining items from multiple recipes. This approach also underscores a strategic schema decision for ingredient quantity storage.
+  - *Print Shopping List (`printDatabaseAggregatedList.js`): This script represents the use of database-level operations for aggregating ingredient quantities. It's efficient for larger datasets and leverages the database's computational power to consolidate items, reducing the data processing load on the application server.
+  - *Print Condensed List (`printAppLayerAggregatedList.js`):* This script is similar to `printDatabaseAggregatedList.js`, but shifts data processing to the application level, offering flexibility for smaller datasets and simpler queries. The approach is particularly beneficial when database capacity is a limiting factor or when front-end data manipulation is required. 
+- *Other List Aggregation Scripts:*
+  - *Print Shopping List by Recipe (`printShoppingListByRecipe.js`):* Similar to `printAppLayerAggregatedList.js`, this script also shifts some of the processing to the application layer. It mimics a similar feature in the ATK mobile app to group list items according to their recipes.
 
 ---
 ## Prerequisites
