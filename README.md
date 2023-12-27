@@ -4,9 +4,9 @@
 - This project presents a scalable PostgreSQL database schema designed for a recipe and grocery list application. It's a backend solution for managing culinary recipes and simplifying grocery shopping experiences. The schema is structured to handle complex relationships inherent in recipe management and grocery list creation, making it a good starting point for developers looking to build a comprehensive recipe and grocery list management system where recipe data can be handled in a dynamic way.
 ---
 ## Key Features
-- *Postgres Schema:* The heart of the project is a PostgreSQL schema design that includes tables for Recipes and Ingredients, along with a join table to establish their many-to-many relationship. Additionally, it features a ShoppingList table and ShoppingListItems table, which further extend the many-to-many relationship between shopping lists and recipe ingredients.
+- *Postgres Schema:* The heart of the project is a PostgreSQL schema design that includes tables for Recipes and Ingredients, along with a join table to establish their many-to-many relationship. Additionally, it features a ShoppingList table and ShoppingListItems table, which supports the many-to-many relationship between shopping lists and recipe ingredients.
 
-- *Scripts that Condense Shopping List Data:* These scripts demonstrate a potential improvement to the shopping list feature in America's Test Kitchen mobile app, specifically in handling recipe ingredients. These scripts consolidates duplicate items by summing their quantities, addressing an issue when combining items from multiple recipes. This approach also underscores a strategic schema decision for ingredient quantity storage.
+- *Scripts that Condense Shopping List Data:* These scripts represent a potential improvement to the shopping list feature in America's Test Kitchen mobile app. They specifically improve how recipe ingredients are handled by merging duplicate items and summing their quantities. This approach also underscores a strategic schema decision for recipe-ingredient quantity storage. 
   - *Print Shopping List (`printDatabaseAggregatedList.js`): This script represents the use of database-level operations for aggregating ingredient quantities. It's efficient for larger datasets and leverages the database's computational power to consolidate items, reducing the data processing load on the application server.
   - *Print Condensed List (`printAppLayerAggregatedList.js`):* This script is similar to `printDatabaseAggregatedList.js`, but shifts data processing to the application level, offering flexibility for smaller datasets and simpler queries. The approach is particularly beneficial when database capacity is a limiting factor or when front-end data manipulation is required. 
 - *Other Shopping List Aggregation Scripts:*
@@ -67,7 +67,7 @@
 
 ### Running the Node.js Script
 
-- To print shopping list items for a specific list, run the following command in the terminal, replacing `[listId]` with the actual ID of the list:
+- To print shopping list items for a specific list, run the following command in the terminal, replacing `[listId]` with the actual list ID:
   ```bash
   node printShoppingList.js [listId]
   ```
