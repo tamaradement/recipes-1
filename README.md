@@ -166,6 +166,7 @@ Associates shopping lists with specific recipe ingredients, facilitating the cre
 
 ### Shopping List and RecipeIngredients (Many-to-Many)
 - A `ShoppingList` can contain multiple `RecipeIngredients`.
+- A `RecipeIngredient` can appear on multiple `ShoppingLists`.
 - The `ShoppingListItems` table serves as a junction table, linking `ShoppingList` with `RecipeIngredients`, which enables the creation of shopping lists based on the ingredients required for selected recipes.
 
 
