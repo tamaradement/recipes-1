@@ -1,7 +1,7 @@
 # Recipes-1
 
 ## Introduction
-- This project presents a scalable PostgreSQL database schema designed for a recipe and grocery list application. It's a backend solution for managing culinary recipes and simplifying grocery shopping experiences. The schema is structured to handle complex relationships inherent in recipe management and grocery list creation, making it a good starting point for developers looking to build a comprehensive recipe and grocery list management system where recipe data can be handled in a dynamic way.
+- This project presents a scalable PostgreSQL database schema designed for a recipe and grocery list application. The schema is structured to handle the complex relationships in recipe management and grocery list creation, making it a good starting point for developers looking to build a comprehensive recipe and grocery list management system where recipe data can be handled in a dynamic way.
 ---
 ## Key Features
 - *Postgres Schema:* The heart of the project is a PostgreSQL schema design that includes tables for Recipes and Ingredients, along with a join table to establish their many-to-many relationship. Additionally, it features a ShoppingList table and ShoppingListItems table, which supports the many-to-many relationship between shopping lists and recipe ingredients.
